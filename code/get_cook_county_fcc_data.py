@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
-project_dir = Path(__file__).resolve().parents[2]
+project_dir = str(Path(__file__).resolve().parents[2])
 
 
 # import in pieces
@@ -29,11 +29,6 @@ print("opening file")
 # import data
 fcc = pd.DataFrame()
 for i, chunk in enumerate(text_file_reader):
-    if i < 10:
-        i+= 1
-        continue
-    if i ==11:
-        break
     print()
     print(f"importing chunk {i}")
     print(chunk)
@@ -43,4 +38,6 @@ for i, chunk in enumerate(text_file_reader):
     fcc = fcc.append(select)
 
 print("saving file")
-fcc.to_csv('data' /' my_fcc.csv')
+file_path_3 = project_dir + "/broadband-map-experiment/data/interem/" \
+ + "cook_county_fcc.csv"
+fcc.to_csv(file_path_3)
