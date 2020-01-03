@@ -1,4 +1,4 @@
 /data/
+!.gitkeep
 .DS_Store
 .vscode/
-! */.gitkeep
