@@ -1,5 +1,7 @@
-/data/
-!.gitkeep
+data/interem
+data/raw
+data/processed
 .DS_Store
 .vscode/
-!/data/data_manifest.txt
+
+
