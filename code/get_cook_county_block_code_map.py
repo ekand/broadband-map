@@ -29,5 +29,5 @@ assert features_length_after < features_length_before, "features list should be 
 file_path = project_dir + "/data/interem/" + "cook_county_map_data.geojson"
 assert file_path == "/Users/erik/broadband_access_research/broadband-map-experiment/data/interem/cook_county_map_data.geojson", "check file path"
 with open(file_path, 'w') as outfile:
-    json.dump(map_il, outfile)
+    json.dump(map_il, outfile, indent = 2)
 print("writing map_il to cook_county_map_data.geojson done")

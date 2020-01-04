@@ -13,8 +13,9 @@ speed_by_block = pd.read_csv(file_path)
 print("max_speed_by_block_code.csv loaded as speed_by_block")
 
 # next, load geojson data for cook county
-file_path = project_dir + "/data/interem/" + "tl_2018_17_tabblock10.geojson"
-assert file_path ==  "/Users/erik/broadband_access_research/broadband-map-experiment/data/interem/tl_2018_17_tabblock10.geojson", "check file path"
+# TODO isolate cook county part of this file
+file_path = project_dir + "/data/interem/" + "cook_county_map_data.geojson"
+assert file_path ==  "/Users/erik/broadband_access_research/broadband-map-experiment/data/interem/cook_county_map_data.geojson", "check file path"
 with open(file_path) as json_file:
     map_d = json.load(json_file)
 print('tl_2018_17_tabblock10.geojson loaded as map_d')
