@@ -1,10 +1,13 @@
-As of 2019-01-04 08:40
-data
+As of 2019-01-04 10:35
+└── data
     ├── data_collection_notes.txt
     ├── data_manifest.txt
     ├── interem
+    │   ├── asdf.txt
     │   ├── cook_county_fcc.csv
+    │   ├── cook_county_map_data.geojson
     │   ├── head_of_cook_county_fcc.csv
+    │   ├── head_of_tl_2018_17_tabblock10.geojson.txt
     │   ├── max_speed_by_block_code.csv
     │   └── tl_2018_17_tabblock10.geojson
     ├── processed
