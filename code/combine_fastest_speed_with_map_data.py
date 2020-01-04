@@ -13,22 +13,21 @@ speed_by_block = pd.read_csv(file_path)
 print("max_speed_by_block_code.csv loaded as speed_by_block")
 
 # next, load geojson data for cook county
-# TODO isolate cook county part of this file
 file_path = project_dir + "/data/interem/" + "cook_county_map_data.geojson"
 assert file_path ==  "/Users/erik/broadband_access_research/broadband-map-experiment/data/interem/cook_county_map_data.geojson", "check file path"
 with open(file_path) as json_file:
-    map_d = json.load(json_file)
+    map_d = json.load(json_file)  # map_d for map dictionary
 print('tl_2018_17_tabblock10.geojson loaded as map_d')
 
 # insert 'top_speed' data into map_d
 for feature in map_d['features']:
     top_speed_mask = speed_by_block['Census Block FIPS Code'] == int(feature['properties']['GEOID10'])
     if not top_speed_mask.any():
-        feature['top_speed'] = 0 
+        feature['properties']['top_speed'] = 0 
     else:
         top_speed = speed_by_block[top_speed_mask].iloc[0, 1]
         assert type(top_speed) == np.float64
-        feature['top_speed'] = top_speed
+        feature['properties']['top_speed'] = top_speed
 print("combining data complete")
 
 # next, save the resulting map_d to a json
