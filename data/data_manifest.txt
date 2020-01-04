@@ -1,0 +1,23 @@
+As of 2019-01-04 08:40
+data
+    ├── data_collection_notes.txt
+    ├── data_manifest.txt
+    ├── interem
+    │   ├── cook_county_fcc.csv
+    │   ├── head_of_cook_county_fcc.csv
+    │   ├── max_speed_by_block_code.csv
+    │   └── tl_2018_17_tabblock10.geojson
+    ├── processed
+    │   └── cook_county_map_with_top_speeds.geojson
+    └── raw
+        ├── Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv
+        ├── head_of_Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.txt
+        └── tl_2018_17_tabblock10
+            ├── county_speeds.csv
+            ├── tl_2018_17_tabblock10.cpg
+            ├── tl_2018_17_tabblock10.dbf
+            ├── tl_2018_17_tabblock10.prj
+            ├── tl_2018_17_tabblock10.shp
+            ├── tl_2018_17_tabblock10.shp.ea.iso.xml
+            ├── tl_2018_17_tabblock10.shp.iso.xml
+            └── tl_2018_17_tabblock10.shx

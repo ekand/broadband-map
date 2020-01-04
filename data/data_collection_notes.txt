@@ -1,0 +1,27 @@
+DATA
+Internet speed data comes from the FCC. The website where I downloaded the csv file is [https://opendata.fcc.gov/Wireline/Fixed-Broadband-Deployment-Data-Jun-2018-Status-V1/ehbi-rr4z](https://opendata.fcc.gov/Wireline/Fixed-Broadband-Deployment-Data-Jun-2018-Status-V1/ehbi-rr4z).
+
+Cook county census block code mapping data comes from the US Census Bureau.
+I downloaded the shapefiles from here: [https://www.census.gov/cgi-bin/geo/shapefiles/index.php](https://www.census.gov/cgi-bin/geo/shapefiles/index.php), then used ogr2ogr to convert them from the Census Bureau's format to the more widely used .geojson format.
+Process to collect the file from that website:
+---
+Select year: 2018
+Select a layer type: Blocks
+---
+Block (2010)
+Select a State: Illinois
+Download
+---
+downloaded file:
+tl_2018_17_tabblock10 (1).zip
+ 
+===========
+The mapping files came from the US Census Bureau. I used ogr2ogr to convert from the Census filetypes into geojson, which is compatible with mapbox.
+The original files from the Census Burear are here:
+broadband-map-experiment//data/raw/tl_2018_17_tabblock10/*
+The converted geojson file is here:
+broadband-map-experiment/data/interem/tl_2018_17_tabblock10.geojson
+
+===========
+Next step is to combine the geojson data with the fcc data and save it in a form that mapbox can use.
+
