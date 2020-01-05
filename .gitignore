@@ -1,7 +1,7 @@
-data/interem
+data/interim
 data/raw
 data/processed
 .DS_Store
 .vscode/
-
+src/__pycache__
 
