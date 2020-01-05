@@ -1,8 +1,10 @@
-data/interim
-data/raw
-data/processed
+data/interim/*
+data/raw/*
+data/processed/*
 .DS_Store
 .vscode/
 src/__pycache__
 .idea/
 notebooks/.ipynb_checkpoints/*
+!*.gitkeep
+!*/*/.gitkeep
