@@ -1,43 +1,57 @@
 import pandas as pd
 from pathlib import Path
 
-project_dir = str(Path(__file__).resolve().parents[2])
-
+PROJECT_DIR = str(Path(__file__).resolve().parents[1])
 
 # import in pieces
 # for each piece, ask if county is cook
 # cook county code is ...
-# search for census code at 60660 yeilds:
+# search for census code at 60660 yields:
 # 170310306012004
 # okay. the 17031 stands for IL (17) and Cook County (031)
 # if it is, save all columns to fcc DataFrame
 
 
-# set up data import
-# file_path = "Users/erik/broadband_access_research/broadband-map/data/Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv"
-# file_path = "fake.csv"
-# chunk_size = 10**6
-# text_file_reader = pd.read_csv(file_path, chunksize=chunk_size)
-file_path_2 = str(project_dir) + "/broadband-map-experiment/data/raw/Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv"
-file_path = "/Users/erik/broadband_access_research/broadband-map-experiment/data/raw/Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv"
-chunk_size=10**6
-text_file_reader = pd.read_csv(file_path_2, chunksize=chunk_size)
-print("opening file")
+def read_fcc_cook():
+    # open file
 
-# shoul be be approx 69 chunks
+    file_path = str(PROJECT_DIR) + "/data/raw/Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv"
+    print(f'opening {file_path}')
+    chunk_size = 10**6
+    text_file_reader = pd.read_csv(file_path, chunksize=chunk_size)
 
-# import data
-fcc = pd.DataFrame()
-for i, chunk in enumerate(text_file_reader):
+    # import data, saving only cook county to the fcc DataFrame
+    fcc_cook = pd.DataFrame()
+    for i, chunk in enumerate(text_file_reader):
+        # print()
+        print(f"importing chunk {i} ", end='')
+        # print(chunk)
+        select = chunk[chunk["Census Block FIPS Code"]//(10**10) == 17031]  # cook county
+        # print("Selected records")
+        # print(select)
+        fcc_cook = fcc_cook.append(select)
     print()
-    print(f"importing chunk {i}")
-    print(chunk)
-    select = chunk[chunk["Census Block FIPS Code"]//(10**10) == 17031]  # cook county
-    print("Selected records")
-    print(select)
-    fcc = fcc.append(select)
+    return fcc_cook
 
-print("saving file")
-file_path_3 = project_dir + "/broadband-map-experiment/data/interem/" \
- + "cook_county_fcc.csv"
-fcc.to_csv(file_path_3)
+
+def save_fcc_cook(fcc_cook):
+
+    file_path = PROJECT_DIR + "/data/interim/cook_county_fcc.csv"
+    print(f"saving {file_path}")
+    fcc_cook.to_csv(file_path)
+
+
+def main():
+    """tests the functions in this module
+
+    """
+    print("running ", str(Path(__file__)))
+    file_path = str(PROJECT_DIR) + "/data/raw/Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv"
+    assert file_path == "/Users/erik/broadband_access_research/broadband-map-experiment/data/raw/Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv" # change for your local directory
+    file_path = str(PROJECT_DIR) + "/data/raw/Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv"
+    assert file_path == "/Users/erik/broadband_access_research/broadband-map-experiment/data/raw/Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv" # change for your local directory
+    print("All tests passed. Have a nice day!")
+
+
+if __name__ == '__main__':
+    main()
