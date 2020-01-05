@@ -1,5 +1,14 @@
 Broadband Access Research Map Project
 
+Reproducing the Python environment:
+Use the included spec-file.txt and follow the instructions here: 
+[https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments]
+(https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments).  
+Additionally, after activating this environment, you will need to run `pip isntall -e .` (note the period).  
+This will isntall the contents of src as a package, so that the jupyter notebooks can acces the code in src.
+
+
+
 DATA
 Internet speed data comes from the FCC. The website where I downloaded the csv file is [https://opendata.fcc.gov/Wireline/Fixed-Broadband-Deployment-Data-Jun-2018-Status-V1/ehbi-rr4z](https://opendata.fcc.gov/Wireline/Fixed-Broadband-Deployment-Data-Jun-2018-Status-V1/ehbi-rr4z).
 
@@ -35,4 +44,10 @@ Point of interest: /data/raw/tl_2018_17_tabblock10 has census blocks for all of 
 
 
 # Data Processing  
-I ... like ... so, okay. First there's /code/get_cook_county_block_code_map.py. This file loads the fcc data from /data/raw/Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv , and extracts the part of it which is cook county. It then saves this data to 
+First there's /code/get_cook_county_block_code_map.py. This file loads the fcc data from /data/raw/Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv , and extracts the part of it which is cook county. It then saves this data to 
+
+
+# Accessing scripts in /code/ from jupyter notebooks in /code/
+After installing a pipenv environment and activating the shell, I ran the following:  
+`pipenv install -e .`  
+This installs all packages in the working directory (which was broadband-map-experiment). In this case the only package is called code
