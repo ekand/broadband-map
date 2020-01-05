@@ -4,7 +4,7 @@ setup(
     name='src',
     packages=find_packages(),
     version='0.1.0',
-    description='a test cookie project',
+    description='a project to analyze broadband internet acces in the US',
     author='Erik Kristofer Anderson',
-    license='MIT',
+    license='MIT', install_requires=['pandas', 'numpy']
 )
