@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 
 PROJECT_DIR = str(Path(__file__).resolve().parents[1])
-print(f"running: {__file__}")
+
 
 
 def load_cook_county():
@@ -27,6 +27,7 @@ def save_max_speeds(max_speed_by_block_code):
 
 
 def main():
+    print(f"running: {__file__}")
     file_path = PROJECT_DIR + "/data/interim/" + "cook_county_fcc.csv"
     assert file_path == "/Users/erik/Desktop/broadband-map-experiment/data/interim/cook_county_fcc.csv"
         # edit for your local machine
