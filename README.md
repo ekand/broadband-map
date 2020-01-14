@@ -43,4 +43,4 @@ First there's /code/get_cook_county_block_code_map.py. This file loads the fcc d
 # Accessing scripts in /code/ from jupyter notebooks in /code/
 After installing a pipenv environment and activating the shell, I ran the following:  
 `pipenv install -e .`  
-This installs all packages in the working directory (which was broadband-map-experiment). In this case the only package is called code
+This installs all packages in the working directory (which was broadband-map-experiment). In this case the only package is called python_code.
