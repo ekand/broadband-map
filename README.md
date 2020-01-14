@@ -20,20 +20,17 @@ extract_cook_county_speeds.py
 
 The project structure is:
 ```
-broadband-map-experiment
-.  
-├── LICENSE  
-├── README.md
-├── code
-│   └── extract_cook_county_speeds_in_code.py
-└── data
-    ├── interem
-    │   ├── cook_county_fcc.csv
-    │   └── head_of_cook_county_fcc.csv
-    ├── processed
-    └── raw
-        ├── Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.csv
-        └── head_of_Fixed_Broadband_Deployment_Data__Jun__2018_Status_V1.txt
+.
+├── data
+│   ├── interim
+│   ├── processed
+│   └── raw
+│       └── tl_2018_17_tabblock10
+├── notebooks
+├── python_code
+│   ├── __pycache__
+│   └── examples
+└── src.egg-info
 ```
 
 Point of interest: /data/raw/tl_2018_17_tabblock10 has census blocks for all of illinois but I only want cook county.
