@@ -2,12 +2,7 @@ Broadband Access Research Map Project
 
 Reproducing the Python environment:
 Use the included spec-file.txt and follow the instructions here: 
-[https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments]
-(https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments).  
-Additionally, after activating this environment, you will need to run `pip isntall -e .` (note the period).  
-This will isntall the contents of src as a package, so that the jupyter notebooks can acces the code in src.
-
-
+[https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments).  It will probably help to install anaconda first.
 
 DATA
 Internet speed data comes from the FCC. The website where I downloaded the csv file is [https://opendata.fcc.gov/Wireline/Fixed-Broadband-Deployment-Data-Jun-2018-Status-V1/ehbi-rr4z](https://opendata.fcc.gov/Wireline/Fixed-Broadband-Deployment-Data-Jun-2018-Status-V1/ehbi-rr4z).
@@ -16,7 +11,7 @@ Cook county census block code mapping data comes from the US Census Bureau.
 I downloaded the shapefiles from here: [https://www.census.gov/cgi-bin/geo/shapefiles/index.php](https://www.census.gov/cgi-bin/geo/shapefiles/index.php), then used ogr2ogr to convert them from the Census Bureau's format to the more widely used .geojson format. Details in /data/data_collection_notes.txt
 
 
-
+The steps to process the files are summarized in   
 Code to process files:
 extract_cook_county_speeds.py
 
