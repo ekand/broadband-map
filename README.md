@@ -2,6 +2,8 @@ Broadband Access Research Map Project
 
 [work in progress]
 
+The current map is available for viewing [here](https://api.mapbox.com/styles/v1/erikkanderson/ck4zu1tsd0z5t1cqr4sj963u2.html?fresh=true&title=view&access_token=pk.eyJ1IjoiZXJpa2thbmRlcnNvbiIsImEiOiJjazMxdnNqcmMwZGgzM2JzNXF5ZnM3MHhlIn0.RhbHx-zoZopJ_Xwx9iDbog#12.82/41.87497/-87.64849).
+
 Reproducing the Python environment:
 Use the included spec-file.txt and follow the instructions here: 
 [https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments).  It will probably help to install anaconda first.
