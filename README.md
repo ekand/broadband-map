@@ -1,5 +1,7 @@
 Broadband Access Research Map Project
 
+[work in progress]
+
 Reproducing the Python environment:
 Use the included spec-file.txt and follow the instructions here: 
 [https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments).  It will probably help to install anaconda first.
